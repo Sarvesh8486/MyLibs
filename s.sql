@@ -276,3 +276,27 @@ CREATE TABLE  `betting`.`history` (
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+
+
+
+
+private void getResult(String drawid, Date drawDate, int pid) throws SQLException {
+    	Database db = new Database();
+    	if(pid==-1){
+    		
+    	}else{
+    		
+    		String drawResultQuery="select result_num from draw_table where draw_id="+drawid+"and draw_date="+drawDate+";";
+    		ResultSet res = db.getdata(drawResultQuery);
+    		res.next();
+    		String resultNum = "c"+Integer.toString(res.getInt(0));
+    		db.close();
+    		
+    		String amountResultQuery="select c.amount, c.isladi, c."+resultNum+",p.rate,p.io_rate,p.commission,p.patti,p.bold, from client_form c and profile p where p.pid=c.cid and p.pid="+pid+";";
+    		res = db.getdata(amountResultQuery);
+    		res.next();
+    		
+    		
+    	}
+	}
