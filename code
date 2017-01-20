@@ -1,0 +1,9 @@
+StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();     
+encryptor.setPassword("asd");
+Properties props = new EncryptableProperties(encryptor);  
+
+props.load(new FileInputStream(System.getenv().get("MONEY_TREE_HOME")+"\\Word\\prop.properties"));
+String datasourceUsername = props.getProperty("datasource.username");
+String datasourcePassword = props.getProperty("datasource.password");
+
+System.out.println(datasourceUsername+" "+datasourcePassword);
