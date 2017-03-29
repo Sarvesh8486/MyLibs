@@ -1,0 +1,20 @@
+package com.example.sarveshtank.securenotes.data;
+
+import android.provider.BaseColumns;
+
+/**
+ * Created by Sarvesh.Tank on 3/29/2017.
+ */
+
+public class DatabaseContract {
+
+    public static final class TableColumn implements BaseColumns {
+        public static final String TABLE_NAME = "user_data";
+        public static final String ID = "id";
+        public static final String HEADING = "heading";
+        public static final String DATA = "data";
+        public static final String CREATED_ON = "created_on";
+        public static final String LAST_MODIFIED_ON = "last_modified_on";
+        public static final String ENCRYPTION_TOKEN = "enc_token";
+    }
+}
