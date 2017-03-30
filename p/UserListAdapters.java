@@ -59,3 +59,4 @@ public class UserListAdapters extends RecyclerView.Adapter<UserListAdapters.User
     }
 
 }
+    
