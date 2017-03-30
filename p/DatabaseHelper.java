@@ -18,16 +18,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String createQuery = "CREATE TABLE "+ DatabaseContract.TableColumn.TABLE_NAME+" ("
+        final String CREATE_QUERY = "CREATE TABLE "+ DatabaseContract.TableColumn.TABLE_NAME+" ("
                 +DatabaseContract.TableColumn._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                +DatabaseContract.TableColumn.HEADING + " VARCHAR(100),  "
-                +DatabaseContract.TableColumn.DATA + " VARCHAR(1000), "
-                +DatabaseContract.TableColumn.CREATED_ON+ " TIMESTAMP, "
-                +DatabaseContract.TableColumn.LAST_MODIFIED_ON+ " TIMESTAMP, "
+                +DatabaseContract.TableColumn.HEADING + " TEXT,  "
+                +DatabaseContract.TableColumn.DATA + " TEXT, "
+                +DatabaseContract.TableColumn.CREATED_ON+ " TIMESTAMP DATETIME  CURRENT_TIMESTAMP, "
+                +DatabaseContract.TableColumn.LAST_MODIFIED_ON+ " TIMESTAMP DATETIME  CURRENT_TIMESTAMP, "
                 +DatabaseContract.TableColumn.ENCRYPTION_TOKEN+ " VARCHAR(9), "
                 +");";
 
-        
+        db.execSQL(CREATE_QUERY);
+
+
+        final String UPDATE_TIME_TRIGGER =
+                "CREATE TRIGGER update_time_trigger" +
+                        "  AFTER UPDATE ON " + DatabaseContract.TableColumn.TABLE_NAME + " FOR EACH ROW" +
+                        "  BEGIN " +
+                        "  UPDATE " + DatabaseContract.TableColumn.TABLE_NAME +
+                        "  SET " + DatabaseContract.TableColumn.LAST_MODIFIED_ON + " = current_timestamp" +
+                        "  WHERE " + DatabaseContract.TableColumn._ID + " = old." + DatabaseContract.TableColumn._ID + ";" +
+                        "  END";
+
+        db.execSQL(UPDATE_TIME_TRIGGER);
     }
 
     @Override
