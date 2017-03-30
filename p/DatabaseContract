@@ -18,3 +18,4 @@ public class DatabaseContract {
         public static final String ENCRYPTION_TOKEN = "enc_token";
     }
 }
+    
