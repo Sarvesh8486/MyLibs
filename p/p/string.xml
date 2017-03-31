@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SecureNotes</string>
+    <string name="pref_sort_label">Sort By</string>
+    <string name="pref_sort_key">pref_key_sort_by</string>
+    <string name="pref_default_sort">Date Created</string>
+
+    <string name="pref_password_label">Security Method</string>
+    <string name="pref_password_key">security_method</string>
+    <string name="pref_password_default_value">None</string>
+
+    <string name="pref_set_password_title">Set Security</string>
+    <string name="pref_set_password_key">set_security</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
