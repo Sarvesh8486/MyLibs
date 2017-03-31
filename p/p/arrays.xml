@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_sort_entries">
+        <item>Date Created</item>
+        <item>Date Modified</item>
+        <item>Heading</item>
+    </array>
+
+    <array name="pref_sort_entries_values">
+        <item>created_on</item>
+        <item>last_modified_on</item>
+        <item>heading</item>
+    </array>
+
+    <array name="pref_password_entries">
+        <item>None</item>
+        <item>Pattern</item>
+        <item>Pin</item>
+    </array>
+
+    <array name="pref_password_entries_values">
+        <item>None</item>
+        <item>Pattern</item>
+        <item>Pin</item>
+    </array>
+
+
+
+</resources>
