@@ -1,0 +1,17 @@
+cycle.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<cycleInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:cycles="7" />
+
+shake.xml
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="0%"
+    android:toXDelta="5%"
+    android:duration="1000"
+    android:interpolator="@anim/cycle" />
+<!--
+    Animation shake = AnimationUtils.loadAnimation(context, R.anim.shake);
+    inflate.startAnimation(shake);
+-->
