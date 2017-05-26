@@ -218,6 +218,7 @@ public class AllNotesFragment extends Fragment implements UserListAdapters.OnCli
     }
     public final static boolean[] PASSWORDS = {false};
     public static AlertDialog askPasswordForSecuredNotes(){
+        PASSWORDS[0] = false;
         LayoutInflater inflater = LayoutInflater.from(context);
         final View inflate = inflater.inflate(R.layout.password_prompt, null, false);
         final EditText password = (EditText) inflate.findViewById(R.id.password_text);
