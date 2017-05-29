@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="#80000000"
+        android:id="@+id/linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/hint_img"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="48dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_speech_bubble_lock_hint_48"
+            android:layout_height="wrap_content" />
+        <Button
+
+            android:id="@+id/got_it_button"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="50dp"
+            android:background="#80000000"
+            android:textColor="#FFF"
+            android:text="Got It"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/edit_add_note_title"
+            style="@style/TextAppearance.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="51dp"
+            android:hint="@string/note_title_hint"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_edit_add_note_title"
+            style="@style/TextAppearance.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="51dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/note_title_hint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/lock_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_lock_open" />
+
+        <View
+            android:id="@+id/horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/edit_add_note_title"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray" />
+
+        <View
+            android:id="@+id/et_horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/et_edit_add_note_title"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/edit_add_note_text"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@id/horizontal_line"
+            android:layout_margin="8dp"
+            android:hint="@string/note_body_hint"
+            android:scrollbars="vertical" />
+
+        <EditText
+            android:id="@+id/et_edit_add_note_text"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@id/et_edit_add_note_title"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:gravity="top|left"
+            android:hint="@string/note_body_hint"
+            android:scrollbars="vertical"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</FrameLayout>
